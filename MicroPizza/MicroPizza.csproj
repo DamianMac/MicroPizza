@@ -78,6 +78,8 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Views\Cart\home.cshtml" />
+    <Content Include="Views\Cart\check.cshtml" />
+    <Content Include="Views\Cart\pay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -96,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Config\" />
+    <Folder Include="Shopping\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
