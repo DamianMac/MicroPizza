@@ -19,6 +19,8 @@ namespace DeliveryService
 
             var builder = new ContainerBuilder();
 
+            builder.RegisterType<OrderDatabase>().AsImplementedInterfaces().SingleInstance();
+
             builder.RegisterType<DeliveryServiceRunner>().AsSelf();
             builder.RegisterModule<NimbusModule>();
 

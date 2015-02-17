@@ -86,13 +86,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeliveryServiceRunner.cs" />
+    <Compile Include="Handlers\ListenForNewOrders.cs" />
+    <Compile Include="Handlers\PlaceOrder.cs" />
+    <Compile Include="IOrderDatabase.cs" />
     <Compile Include="NimbusModule.cs" />
+    <Compile Include="OrderDatabase.cs" />
+    <Compile Include="DeliverySlip.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DeliveryService.Messages\DeliveryService.Messages.csproj">
+      <Project>{D91A72C1-4E9F-4DFE-B708-B197C64DDE36}</Project>
+      <Name>DeliveryService.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MicroPizza.Messages\MicroPizza.Messages.csproj">
+      <Project>{6BE1A4E3-9865-4081-91C0-CDC2BA259036}</Project>
+      <Name>MicroPizza.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PaymentService.Messages\PaymentService.Messages.csproj">
+      <Project>{B98B9B79-091D-4E06-A551-9CDA19142E47}</Project>
+      <Name>PaymentService.Messages</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

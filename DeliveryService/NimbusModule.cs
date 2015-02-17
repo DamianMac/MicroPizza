@@ -2,10 +2,13 @@
 using System.Configuration;
 using System.Reflection;
 using Autofac;
+using DeliveryService.Messages;
+using MicroPizza.Messages;
 using Nimbus;
 using Nimbus.Configuration;
 using Nimbus.Infrastructure;
 using Nimbus.Logger.Serilog;
+using PaymentService.Messages;
 using Module = Autofac.Module;
 
 namespace DeliveryService
@@ -16,7 +19,11 @@ namespace DeliveryService
         protected override void Load(ContainerBuilder builder)
         {
 
-            var typeProvider = new AssemblyScanningTypeProvider(Assembly.GetExecutingAssembly());
+            var typeProvider = new AssemblyScanningTypeProvider(Assembly.GetExecutingAssembly(), 
+                typeof(NewPizzaOrderEvent).Assembly,
+                typeof(PaymentSuccessfulEvent).Assembly,
+                typeof(OrderDeliveredEvent).Assembly
+                );
             var connectionString = ConfigurationManager.AppSettings["BusConnectionString"];
 
 

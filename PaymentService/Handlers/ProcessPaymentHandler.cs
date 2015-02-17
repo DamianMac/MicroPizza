@@ -22,6 +22,13 @@ namespace PaymentService.Handlers
 
             Thread.Sleep(10000);
 
+            //var client = new PinPaymentsClient();
+            //client.ApiKey = "dssds";
+
+            //    var payment = client.Crea
+
+
+
             var paymentSuccessfulEvent = new PaymentSuccessfulEvent {OrderId = busCommand.OrderId};
             _bus.Publish(paymentSuccessfulEvent);
 

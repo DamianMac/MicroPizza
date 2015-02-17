@@ -130,6 +130,7 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Config\NimbusModule.cs" />
     <Compile Include="Config\ShoppingModule.cs" />
+    <Compile Include="Handlers\CompleteOrderHandler.cs" />
     <Compile Include="Handlers\SuccessfulPaymentHandler.cs" />
     <Compile Include="NancyModules\CartModule.cs" />
     <Compile Include="NancyModules\HomeModule.cs" />
@@ -138,6 +139,10 @@
     <Compile Include="Shopping\ShoppingCartRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DeliveryService.Messages\DeliveryService.Messages.csproj">
+      <Project>{D91A72C1-4E9F-4DFE-B708-B197C64DDE36}</Project>
+      <Name>DeliveryService.Messages</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MicroPizza.Messages\MicroPizza.Messages.csproj">
       <Project>{6BE1A4E3-9865-4081-91C0-CDC2BA259036}</Project>
       <Name>MicroPizza.Messages</Name>

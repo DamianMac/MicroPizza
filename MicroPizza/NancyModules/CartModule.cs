@@ -45,8 +45,20 @@ namespace MicroPizza.NancyModules
 
                 var url = "/cart/check/" + (string)(order.Id.ToString());
 
+                var newOrderEvent = new NewPizzaOrderEvent
+                {
+                    CustomerName = "Bob",
+                    LineItems = order.LineItems,
+                    OrderId = order.Id
+                };
+
+                _bus.Publish(newOrderEvent);
+
+
                 var command = new ProcessPaymentCommand{OrderId = order.Id, Amount = order.Price, CardName = "Joe Blogs"};
                 _bus.Send(command);
+
+
 
                 return Response.AsRedirect(url);
             };

@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Reflection;
 using Autofac;
+using DeliveryService.Messages;
 using MicroPizza.Messages;
 using Nimbus;
 using Nimbus.Configuration;
@@ -28,7 +29,7 @@ namespace MicroPizza.Config
       .CreateLogger();
 
 
-            var typeProvider = new AssemblyScanningTypeProvider(Assembly.GetExecutingAssembly(), typeof(ProcessPaymentCommand).Assembly, typeof(PaymentSuccessfulEvent).Assembly);
+            var typeProvider = new AssemblyScanningTypeProvider(Assembly.GetExecutingAssembly(), typeof(ProcessPaymentCommand).Assembly, typeof(PaymentSuccessfulEvent).Assembly, typeof(OrderDeliveredEvent).Assembly);
             var connectionString = ConfigurationManager.AppSettings["BusConnectionString"];
 
 
