@@ -44,9 +44,9 @@ namespace EmailService
                 });
                 x.RunAsLocalSystem();
                 x.UseSerilog();
-                x.SetDescription("Pizza Payment Service");
-                x.SetDisplayName("Pizza Payment Service");
-                x.SetServiceName("PizzaPaymentService");
+                x.SetDescription("Pizza Email Service");
+                x.SetDisplayName("Pizza Email Service");
+                x.SetServiceName("PizzaEmailService");
             });
 
 

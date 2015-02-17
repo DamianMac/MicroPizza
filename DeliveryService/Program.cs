@@ -45,9 +45,9 @@ namespace DeliveryService
                 });
                 x.RunAsLocalSystem();
                 x.UseSerilog();
-                x.SetDescription("Pizza Payment Service");
-                x.SetDisplayName("Pizza Payment Service");
-                x.SetServiceName("PizzaPaymentService");
+                x.SetDescription("Pizza Delivery Service");
+                x.SetDisplayName("Pizza Delivery Service");
+                x.SetServiceName("PizzaDeliveryService");
             });
 
 

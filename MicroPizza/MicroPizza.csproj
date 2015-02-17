@@ -70,6 +70,9 @@
     <Reference Include="Nimbus.InfrastructureContracts">
       <HintPath>..\packages\Nimbus.InfrastructureContracts.2.0.0.91\lib\net45\Nimbus.InfrastructureContracts.dll</HintPath>
     </Reference>
+    <Reference Include="Nimbus.Logger.Serilog">
+      <HintPath>..\packages\Nimbus.Logger.Serilog.2.0.0.91\lib\net45\Nimbus.Logger.Serilog.dll</HintPath>
+    </Reference>
     <Reference Include="Nimbus.MessageContracts">
       <HintPath>..\packages\Nimbus.MessageContracts.2.0.0.91\lib\net45\Nimbus.MessageContracts.dll</HintPath>
     </Reference>
@@ -125,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Config\NimbusModule.cs" />
     <Compile Include="Config\ShoppingModule.cs" />
     <Compile Include="NancyModules\CartModule.cs" />
     <Compile Include="NancyModules\HomeModule.cs" />
