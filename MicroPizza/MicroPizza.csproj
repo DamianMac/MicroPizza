@@ -136,7 +136,12 @@
     <Compile Include="Shopping\PizzaOrder.cs" />
     <Compile Include="Shopping\ShoppingCartRepository.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MicroPizza.Messages\MicroPizza.Messages.csproj">
+      <Project>{6BE1A4E3-9865-4081-91C0-CDC2BA259036}</Project>
+      <Name>MicroPizza.Messages</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

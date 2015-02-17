@@ -1,15 +1,19 @@
-﻿using MicroPizza.Shopping;
+﻿using MicroPizza.Messages;
+using MicroPizza.Shopping;
 using Nancy;
+using Nimbus;
 
 namespace MicroPizza.NancyModules
 {
     public class CartModule : NancyModule
     {
         private readonly IShoppingCartRepository _shoppingCartRepository;
+        private readonly IBus _bus;
 
-        public CartModule(IShoppingCartRepository shoppingCartRepository) : base("/cart")
+        public CartModule(IShoppingCartRepository shoppingCartRepository, IBus bus) : base("/cart")
         {
             _shoppingCartRepository = shoppingCartRepository;
+            _bus = bus;
             Get["/"] = _ => View["home"];
             Post["place"] = _ =>
             {
@@ -40,6 +44,9 @@ namespace MicroPizza.NancyModules
                 var order = _shoppingCartRepository.Get(_.orderid);
 
                 var url = "/cart/check/" + (string)(order.Id.ToString());
+
+                var command = new ProcessPaymentCommand{OrderId = order.Id, Amount = order.Price, CardName = "Joe Blogs"};
+                _bus.Send(command);
 
                 return Response.AsRedirect(url);
             };

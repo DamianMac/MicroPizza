@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Reflection;
 using Autofac;
+using MicroPizza.Messages;
 using Nimbus;
 using Nimbus.Configuration;
 using Nimbus.Infrastructure;
@@ -16,7 +17,7 @@ namespace PaymentService
         protected override void Load(ContainerBuilder builder)
         {
 
-            var typeProvider = new AssemblyScanningTypeProvider(Assembly.GetExecutingAssembly());
+            var typeProvider = new AssemblyScanningTypeProvider(Assembly.GetExecutingAssembly(), typeof(ProcessPaymentCommand).Assembly);
             var connectionString = ConfigurationManager.AppSettings["BusConnectionString"];
 
 

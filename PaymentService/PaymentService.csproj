@@ -86,6 +86,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\ProcessPaymentHandler.cs" />
     <Compile Include="NimbusModule.cs" />
     <Compile Include="PaymentServiceRunner.cs" />
     <Compile Include="Program.cs" />
@@ -94,6 +95,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MicroPizza.Messages\MicroPizza.Messages.csproj">
+      <Project>{6BE1A4E3-9865-4081-91C0-CDC2BA259036}</Project>
+      <Name>MicroPizza.Messages</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
