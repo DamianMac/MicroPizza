@@ -1,4 +1,5 @@
-﻿@{
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<MicroPizza.Shopping.PizzaOrder>
+@{
     Layout = null;
 }
 
@@ -15,14 +16,19 @@
         
 
             <h2>My Order</h2>
-            <ul>
-                <li>1 Pepperoni Pizza</li>
-                <li>1 Garlic Bread</li>
-                <li>$19.00</li>
-            </ul>
+        <ul>
+            @{
+                foreach (var lineItem in Model.LineItems)
+                {
+                    <li>@lineItem</li>
+
+                }
+            }
+        </ul>
+
+        <p>At a cost of $@Model.Price</p>
         
-        
-        <p>Pending</p>
+        <p>@Model.Status</p>
 
         
 

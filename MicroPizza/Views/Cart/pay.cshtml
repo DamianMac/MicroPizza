@@ -1,4 +1,5 @@
-﻿@{
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<MicroPizza.Shopping.PizzaOrder>
+@{
     Layout = null;
 }
 
@@ -12,16 +13,21 @@
         <div>
             <h1>PAY TEH MONIES</h1>
             
-            <form action="/cart/pay" method="POST">
+            <form action="/cart/pay/@Model.Id" method="POST">
 
 
                 <h2>My Cart</h2>
                 <ul>
-                    <li>1 Pepperoni Pizza</li>
-                    <li>1 Garlic Bread</li>
+                    @{
+                        foreach (var lineItem in Model.LineItems)
+                        {
+                            <li>@lineItem</li>
+  
+                        }
+                    }
                 </ul>
                 
-                <p>That will be $19.00</p>
+                <p>That will be $@Model.Price</p>
 
                 <input type="submit" value="Pay Now" />
 
