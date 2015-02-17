@@ -7,6 +7,7 @@ using Nimbus;
 using Nimbus.Configuration;
 using Nimbus.Infrastructure;
 using Nimbus.Logger.Serilog;
+using PaymentService.Messages;
 using Module = Autofac.Module;
 
 namespace PaymentService
@@ -17,7 +18,7 @@ namespace PaymentService
         protected override void Load(ContainerBuilder builder)
         {
 
-            var typeProvider = new AssemblyScanningTypeProvider(Assembly.GetExecutingAssembly(), typeof(ProcessPaymentCommand).Assembly);
+            var typeProvider = new AssemblyScanningTypeProvider(Assembly.GetExecutingAssembly(), typeof(ProcessPaymentCommand).Assembly, typeof(PaymentSuccessfulEvent).Assembly);
             var connectionString = ConfigurationManager.AppSettings["BusConnectionString"];
 
 

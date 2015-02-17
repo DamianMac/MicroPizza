@@ -130,6 +130,7 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Config\NimbusModule.cs" />
     <Compile Include="Config\ShoppingModule.cs" />
+    <Compile Include="Handlers\SuccessfulPaymentHandler.cs" />
     <Compile Include="NancyModules\CartModule.cs" />
     <Compile Include="NancyModules\HomeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +141,10 @@
     <ProjectReference Include="..\MicroPizza.Messages\MicroPizza.Messages.csproj">
       <Project>{6BE1A4E3-9865-4081-91C0-CDC2BA259036}</Project>
       <Name>MicroPizza.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PaymentService.Messages\PaymentService.Messages.csproj">
+      <Project>{B98B9B79-091D-4E06-A551-9CDA19142E47}</Project>
+      <Name>PaymentService.Messages</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

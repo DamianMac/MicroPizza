@@ -101,6 +101,10 @@
       <Project>{6BE1A4E3-9865-4081-91C0-CDC2BA259036}</Project>
       <Name>MicroPizza.Messages</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PaymentService.Messages\PaymentService.Messages.csproj">
+      <Project>{B98B9B79-091D-4E06-A551-9CDA19142E47}</Project>
+      <Name>PaymentService.Messages</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
